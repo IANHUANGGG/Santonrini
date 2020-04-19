@@ -1,0 +1,16 @@
+"one"
+[["0one1", 0, 1, 2, "2two1", 0],[1, "0one2", 0, 0, 0, "0two2"]]
+0
+["move", "one1", ["PUT", "SOUTH"]]
+["+build", ["PUT", "NORTH"]]
+"two"
+[["0one1", 0, 1, 2, "2two1", 0],[1, "0one2", 0, 0, 0, "0two2"]]
+0
+["move", "two1", ["PUT", "SOUTH"]]
+["+build", ["PUT", "NORTH"]]
+"one"
+[["0one1", 0, 1, 2, "2two1", 0],[1, "0one2", 0, 0, 0, "0two2"]]
+0
+"two"
+[["0one1", 0, 1, 2, "2two1", 0],[1, "0one2", 0, 0, 0, "0two2"]]
+0

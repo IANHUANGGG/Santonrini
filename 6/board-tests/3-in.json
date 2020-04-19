@@ -1,0 +1,9 @@
+[["0player11", "2", "2", "2", "1", "0"], 
+ ["0", "0player12", "1", "2", "1", "0"], 
+ ["0", "0", "0player21", "1", "1", "1"], 
+ ["0", "0", "2", "0player22", "1", "1"]]
+["neighbors", "player22", ["PUT", "NORTH"]]
+["occupied?", "player22", ["PUT", "NORTH"]]
+["move", "player21", ["EAST", "PUT"]]
+["occupied?", "player22", ["PUT", "NORTH"]]
+

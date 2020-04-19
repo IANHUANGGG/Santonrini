@@ -1,0 +1,2 @@
+[[0,0,0,0,0,0],[0,0,"0kb1",0,0,0],[0,0,0,0,0,"0gp2"],[0,0,0,0,"0kb2",0],[0,0,0,0,0,0],[0,"0gp1",0,0,0,0]]["move", "kb2", ["EAST", "PUT"]]["move", "gp2", ["PUT", "NORTH"]]["height", "kb2", ["PUT", "NORTH"]]["height", "gp2", ["PUT", "SOUTH"]]["build", "kb2", ["PUT", "NORTH"]]["height", "kb2", ["PUT", "NORTH"]]["height", "gp2", ["PUT", "SOUTH"]]["build", "gp2", ["PUT", "SOUTH"]]["height", "kb2", ["PUT", "NORTH"]]["height", "gp2", ["PUT", "SOUTH"]]
+

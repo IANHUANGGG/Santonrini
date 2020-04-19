@@ -1,0 +1,9 @@
+[[0, 0, 0, 0, 0, 0],
+ [0, "2grisha1","2grisha2", 0, 0, 0],
+ [3, 1, 0, 1, 2, 1],
+ [1, "1masha1", 0, 0, 1, "1masha2"],
+ [0, 0, 0, 0, 0, 0],
+ [0, 0, 0, 0, 0, 0]]
+["height", "masha1", ["PUT", "NORTH"]]
+["build", "masha1", ["PUT", "NORTH"]]
+["height", "masha1", ["PUT", "NORTH"]]

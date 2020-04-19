@@ -1,0 +1,8 @@
+[["0player11", "2", "2", "2", "1", "0"], 
+ ["0", "0player12", "1", "2", "1", "0"], 
+ ["0", "0", "0player21", "2", "1", "1"], 
+ ["0", "0", "2", "0player22", "1", "1"]]
+["build", "player11", ["EAST", "PUT"]]
+["height", "player11", ["EAST", "PUT"]]
+["build", "player11", ["PUT", "NORTH"]]
+["height", "player11", ["PUT", "NORTH"]]

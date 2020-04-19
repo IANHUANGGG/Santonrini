@@ -1,0 +1,6 @@
+[[0, 2, "0one1", 2],
+[0, "1two1", "0one2"],
+[1, 2, "0two2"]]
+["occupied?", "two1", ["PUT", "NORTH"]]
+["move", "one1", ["WEST", "PUT"]]
+["occupied?", "two1", ["PUT", "NORTH"]]

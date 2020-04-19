@@ -1,0 +1,16 @@
+[[0, "0picard2", 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [2, 2, 2, 0, 0, 0],
+  [2, "0riker1", 0, "0picard1", 0, 0],
+  [2, 2, 2, 0, 0, 0],
+  [2, "0riker2", 2, 0, 0, 0]]
+["neighbors", "picard1", ["WEST", "PUT"]]
+["occupied?", "picard1", ["WEST", "PUT"]]
+["move", "picard1", ["WEST", "PUT"]]
+["height", "picard1", ["WEST", "PUT"]]
+["height", "picard1", ["WEST", "NORTH"]]
+["build", "picard1", ["WEST", "NORTH"]]
+["neighbors", "riker1", ["EAST", "PUT"]]
+["height", "riker1", ["PUT", "NORTH"]]
+["occupied?", "riker1", ["EAST", "PUT"]]
+

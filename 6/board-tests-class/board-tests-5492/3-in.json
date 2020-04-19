@@ -1,0 +1,15 @@
+[[],
+ [],
+ [1, 0, "2superhotplayer1"],
+ [0, 0, 4, "0superhotplayer2", "2supernotplayer1"],
+ [0, 0, 0, 0, 1, 3],
+ [0, 0, 0, 4, 4, "0supernotplayer2"]
+]
+["height", "superhotplayer1", ["WEST", "PUT"]]
+["height", "superhotplayer2", ["EAST", "PUT"]]
+["height", "superhotplayer1", ["WEST", "SOUTH"]]
+["height", "superhotplayer1", ["PUT", "SOUTH"]]
+["height", "superhotplayer1", ["EAST", "SOUTH"]]
+["height", "superhotplayer2", ["WEST", "NORTH"]]
+["height", "supernotplayer2", ["PUT", "NORTH"]]
+["height", "supernotplayer1", ["EAST", "NORTH"]]

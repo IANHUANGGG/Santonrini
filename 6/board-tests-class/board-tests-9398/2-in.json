@@ -1,0 +1,6 @@
+[["1east1", "1move1", "1east2", "1move2"]]
+["neighbors", "east1", ["WEST", "PUT"]]
+["move", "east1", ["EAST", "SOUTH"]]
+["build", "move1", ["WEST", "PUT"]]
+["neighbors", "east1", ["WEST", "PUT"]]
+["occupied?", "move1", ["PUT", "SOUTH"]]

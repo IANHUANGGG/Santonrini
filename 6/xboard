@@ -1,0 +1,153 @@
+#!/usr/bin/env python3.6
+"""Test harness for the Santorini Board & Pieces."""
+import json
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
+from Common.pieces import Board, Worker, Direction
+from Lib import echo
+
+
+def parse_board(cells):
+    """Converts a list of list of strings into a Board object."""
+    new_board = [[0 for col in range(Board.BOARD_SIZE)] for row in
+                 range(Board.BOARD_SIZE)]
+    workers = {}
+    for (row, rows) in enumerate(cells):
+        for col in range(len(rows)):
+            cur_cell = cells[row][col]
+            if isinstance(cur_cell, int):
+                new_board[row][col] = cur_cell
+            elif cur_cell:
+                new_board[row][col] = int(cur_cell[0])
+                cur_worker = parse_worker(cur_cell[1:])
+                if cur_worker:
+                    workers[cur_worker] = (row, col)
+
+    cur_board = Board(new_board, workers)
+    return cur_board
+
+
+def parse_direction(dir_list):
+    """Convert a list of directions into our Direction representation.
+
+    A Direction is [EastWest, NorthSouth] where EastWest is one of:
+    "EAST" "PUT" "WEST" and NorthSouth is one of: "NORTH" "PUT" "SOUTH".
+    """
+
+    dir_table = {("PUT", "NORTH"): Direction.NORTH,
+                 ("PUT", "SOUTH"): Direction.SOUTH,
+                 ("PUT", "PUT"): Direction.STAY,
+                 ("EAST", "PUT"): Direction.EAST,
+                 ("WEST", "PUT"): Direction.WEST,
+                 ("EAST", "NORTH"): Direction.NORTHEAST,
+                 ("WEST", "NORTH"): Direction.NORTHWEST,
+                 ("EAST", "SOUTH"): Direction.SOUTHEAST,
+                 ("WEST", "SOUTH"): Direction.SOUTHWEST}
+
+    return dir_table[tuple(dir_list)]
+
+
+def parse_worker(string):
+    """Convert an input worker string into a Worker object"""
+    if string:
+        player_num = int(string[-1:])
+        player_name = string[:-1]
+
+        return Worker(player_name, player_num)
+
+
+def move_worker(board_in, worker_in, direction_in):
+    """Move the input worker in the input direction."""
+    try:
+        cur_worker = parse_worker(worker_in)
+        cur_direction = parse_direction(direction_in)
+
+        board_in.move_worker(cur_worker, cur_direction)
+    except (LookupError, ValueError):
+        pass
+
+    return []
+
+
+def build(board_in, worker_in, direction_in):
+    """Build in the neighboring cell specified by the direction."""
+    try:
+        cur_worker = parse_worker(worker_in)
+        cur_direction = parse_direction(direction_in)
+
+        board_in.build_floor(cur_worker, cur_direction)
+    except (LookupError, ValueError, OverflowError):
+        pass
+
+    return []
+
+
+def is_neighbor(board_in, worker_in, direction_in):
+    """Check if the input worker has a neighbor."""
+    try:
+        cur_dir = parse_direction(direction_in)
+        cur_worker = parse_worker(worker_in)
+
+        result = board_in.is_neighbor(cur_worker, cur_dir)
+    except (LookupError, ValueError):
+        return "no"
+
+    return "yes" if result else "no"
+
+
+def is_occupied(board_in, worker_in, direction_in):
+    """Check if the input worker has an occupied cell."""
+    try:
+        cur_dir = parse_direction(direction_in)
+        cur_worker = parse_worker(worker_in)
+        cur_pos = Direction.move_position(board_in.worker_position(cur_worker),
+                                          cur_dir)
+        result = board_in.is_occupied(cur_pos)
+    except (LookupError, ValueError):
+        return "no"
+
+    return "yes" if result else "no"
+
+
+def get_height(board_in, worker_in, direction_in):
+    """Return the height of the building in the cell shown by the direction."""
+
+    cur_worker = parse_worker(worker_in)
+    cur_direction = parse_direction(direction_in)
+
+    height = 0
+
+    try:
+        height = board_in.get_height(board_in.worker_position(cur_worker),
+                                     cur_direction)
+    except LookupError:
+        pass
+    return height
+
+
+def xboard(stdin):
+    """Test harness for the Santorini board."""
+    commands = {'move': move_worker,
+                'build': build,
+                'neighbors': is_neighbor,
+                'occupied?': is_occupied,
+                'height': get_height}
+
+    command_list = echo.json_echo(stdin)
+    board_in = parse_board(command_list[0])
+    for command in command_list[1:]:
+        result = commands[command[0]](board_in, *command[1:])
+        if result is not None:
+            print(json.dumps(result))
+
+    print()
+
+
+def main():
+    """Main function that reads from stdin and prints to stdout."""
+    xboard(sys.stdin.read())
+
+
+if __name__ == '__main__':
+    main()

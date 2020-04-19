@@ -1,0 +1,8 @@
+[["0playerone1","0playerone2","0playertwo1",0,"0playertwo2"]]
+["move","playertwo2", ["WEST", "PUT"]]
+["move","playerone1", ["PUT", "SOUTH"]]
+["move","playerone1", ["PUT", "SOUTH"]]
+["move","playerone1", ["EAST", "SOUTH"]]
+["move","playerone2", ["EAST", "SOUTH"]]
+["neighbors","playertwo1", ["EAST", "NORTH"]]
+

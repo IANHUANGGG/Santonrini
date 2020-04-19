@@ -1,0 +1,10 @@
+[["3a1","2a2","2b1","2b2",0,0],[4,2],[0,0,0,0,0,0],[0,0,0,0,0,0],[0,0,0,0,0,0]]
+["height","a1",["PUT","PUT"]]
+["height","a1",["PUT","SOUTH"]]
+["height","b2",["PUT","PUT"]]
+["height","a2",["PUT","SOUTH"]]
+["height","a2",["EAST","SOUTH"]]
+["move","a2",["EAST","SOUTH"]]
+["build","a2",["WEST","NORTH"]]
+["height", "b1",["WEST","PUT"]]
+

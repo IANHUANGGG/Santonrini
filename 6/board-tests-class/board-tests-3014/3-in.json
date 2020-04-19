@@ -1,0 +1,25 @@
+[[0, "0data1", 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, "0data2"],
+  [2, 2, 2, 0, 0, 0],
+  [2, "2worf1", 2, 0, 0, 0],
+  [2, 2, 2, 3, 3, 0],
+  [3, 3, 3, "0worf2", 3, 0]]
+["neighbors", "worf1", ["PUT", "NORTH"]]
+["occupied?", "worf1", ["PUT", "NORTH"]]
+["move", "worf1", ["PUT", "NORTH"]]
+["height", "worf1", ["PUT", "SOUTH"]]
+["build", "worf1", ["PUT", "SOUTH"]]
+["neighbors", "data2", ["PUT", "NORTH"]]
+["occupied?", "data2", ["PUT", "NORTH"]]
+["move", "data2", ["PUT", "NORTH"]]
+["height", "data2", ["PUT", "SOUTH"]]
+["build", "data2", ["PUT", "SOUTH"]]
+["neighbors", "worf1", ["PUT", "SOUTH"]]
+["occupied?", "worf1", ["PUT", "SOUTH"]]
+["move", "worf1", ["PUT", "SOUTH"]]
+
+
+
+
+
+
